@@ -43,16 +43,45 @@ public class InventoryDragablePanel : MonoBehaviour
     {
         if (ItemDestination != null)
         {
-            if (ItemDestination.ItemStored == null)
+            if (ItemDestination.TypeOfSlot == InventorySlotController.SlotType.Free)
             {
-                ItemSource.RemoveItem();
-                ItemDestination.StoreItem(DraggedItem);
+                if (ItemDestination.ItemStored == null)
+                {
+                    ItemSource.RemoveItem();
+                    ItemDestination.StoreItem(DraggedItem);
+                }
+                else
+                {
+                    ItemSource.StoreItem(ItemDestination.ItemStored);
+                    ItemDestination.StoreItem(DraggedItem);
+                }
+            }
+            else if (ItemDestination.TypeOfSlot == InventorySlotController.SlotType.Melle)
+            {
+                if (ItemDestination.ItemStored == null && DraggedItem.TypeOfHit == HitType.melle)
+                {
+                    ItemSource.RemoveItem();
+                    ItemDestination.StoreItem(DraggedItem);
+                }
+                else if (ItemDestination.ItemStored != null && DraggedItem.TypeOfHit == HitType.melle)
+                {
+                    ItemSource.StoreItem(ItemDestination.ItemStored);
+                    ItemDestination.StoreItem(DraggedItem);
+                }
             }
             else
             {
-                ItemSource.StoreItem(ItemDestination.ItemStored);
-                ItemDestination.StoreItem(DraggedItem);
-            }
+                if (ItemDestination.ItemStored == null && DraggedItem.TypeOfHit == HitType.range)
+                {
+                    ItemSource.RemoveItem();
+                    ItemDestination.StoreItem(DraggedItem);
+                }
+                else if (ItemDestination.ItemStored != null && DraggedItem.TypeOfHit == HitType.range)
+                {
+                    ItemSource.StoreItem(ItemDestination.ItemStored);
+                    ItemDestination.StoreItem(DraggedItem);
+                }
+            }            
         }
         ItemSource = null;
         ItemDestination = null;

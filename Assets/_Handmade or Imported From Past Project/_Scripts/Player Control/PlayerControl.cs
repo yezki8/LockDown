@@ -32,8 +32,8 @@ public class PlayerControl : MonoBehaviour
     bool attacking = false;
     public float cooldown = 0;
     float attackCd;
-    public ItemSO EquippedMelle;
-    public ItemSO EquippedRange;
+    public InventorySlotController EquippedMelle;
+    public InventorySlotController EquippedRange;
     public bool isIdle;
     public bool isRight;
 
@@ -173,7 +173,7 @@ public class PlayerControl : MonoBehaviour
             PlayerBody.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             if (attacking)
             {
-                if (EquippedMelle != null)
+                if (EquippedMelle.ItemStored != null)
                 {
                     BasicMelleAttack();
                 }
@@ -190,7 +190,7 @@ public class PlayerControl : MonoBehaviour
             PlayerBody.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             if (attacking)
             {
-                if (EquippedRange != null)
+                if (EquippedRange.ItemStored != null)
                 {
                     BasicRangeAttack();
                 }
@@ -201,7 +201,8 @@ public class PlayerControl : MonoBehaviour
 
     void BasicMelleAttack()
     {
-        GameObject hitboxPrefab = EquippedMelle.ProjectileObject;
+        ItemSO equippedSO = EquippedMelle.ItemStored;
+        GameObject hitboxPrefab = equippedSO.ProjectileObject;
         GameObject BasicAttack = Instantiate(hitboxPrefab, Indicator.transform);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
@@ -211,7 +212,8 @@ public class PlayerControl : MonoBehaviour
 
     void BasicRangeAttack()
     {
-        GameObject projectilePrefab = EquippedRange.ProjectileObject;
+        ItemSO equippedSO = EquippedRange.ItemStored;
+        GameObject projectilePrefab = equippedSO.ProjectileObject;
         GameObject BasicAttack = Instantiate(projectilePrefab, Indicator.transform.position, Indicator.transform.rotation);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;

@@ -201,8 +201,8 @@ MonoBehaviour:
   combatState: 0
   canAttack: 0
   cooldown: 0
-  EquippedMelle: {fileID: 0}
-  EquippedRange: {fileID: 0}
+  EquippedMelle: {fileID: 1019159613}
+  EquippedRange: {fileID: 1546404182}
   isIdle: 0
   isRight: 0
   stunned: 0
@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 413551385}
+  TypeOfSlot: 0
 --- !u!1 &699320588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 229956133}
+  TypeOfSlot: 1
 --- !u!1001 &1070864572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2118,6 +2120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 2073927080}
+  TypeOfSlot: 0
 --- !u!1 &1202139075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 50089291}
+  TypeOfSlot: 0
 --- !u!1 &1281062046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 622545079}
+  TypeOfSlot: 0
 --- !u!1 &1546404178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2466,6 +2471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 492150267}
+  TypeOfSlot: 2
 --- !u!1 &1642981459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 1281062048}
+  TypeOfSlot: 0
 --- !u!1 &1774820335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2784,6 +2791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 828063393}
+  TypeOfSlot: 0
 --- !u!1 &1776625100
 GameObject:
   m_ObjectHideFlags: 0

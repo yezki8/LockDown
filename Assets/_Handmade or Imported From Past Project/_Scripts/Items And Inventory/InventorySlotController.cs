@@ -11,6 +11,14 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
     public ItemSO ItemStored;
     public Image SlotImage;
 
+    public enum SlotType
+    {
+        Free,
+        Melle,
+        Range
+    }
+    public SlotType TypeOfSlot;
+
     public void StoreItem(ItemSO item)
     {
         ItemStored = item;
