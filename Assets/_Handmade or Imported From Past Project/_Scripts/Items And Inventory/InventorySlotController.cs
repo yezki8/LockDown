@@ -11,6 +11,11 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
     public ItemSO ItemStored;
     public Image SlotImage;
 
+    [Header("For Tooltip")]
+    public float CallTooltipTimer = 4;
+    [SerializeField] float _callTooltipCountdown;
+    [SerializeField] bool isCallingTooltip;
+
     public enum SlotType
     {
         Free,
@@ -18,6 +23,25 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
         Range
     }
     public SlotType TypeOfSlot;
+
+    private void Update()
+    {
+        if (isCallingTooltip)
+        {
+            if (_callTooltipCountdown > 0)
+            {
+                _callTooltipCountdown -= 1 * Time.deltaTime;
+            }
+            else
+            {
+                CallTooltip();
+            }
+        }
+        else
+        {
+            _callTooltipCountdown = CallTooltipTimer;
+        }
+    }
 
     public void StoreItem(ItemSO item)
     {
@@ -31,6 +55,14 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
         SlotImage.sprite = null;
     }
 
+    void CallTooltip()
+    {
+        isCallingTooltip = false;
+        TooltipController.Instance.SetParagraph(ItemStored.ItemName, ItemStored.ItemDescription);
+        TooltipController.Instance.ShowTooltip();
+    }
+
+    // Event System =============================================================================
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("PointerDown");
@@ -39,6 +71,10 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
     public void OnPointerEnter(PointerEventData eventData)
     {
         InventoryDragablePanel.Instance.ItemDestination = this;
+        if (ItemStored != null)
+        {
+            isCallingTooltip = true;
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -47,6 +83,8 @@ public class InventorySlotController : MonoBehaviour, IPointerDownHandler,
         {
             InventoryDragablePanel.Instance.ItemDestination = null;
         }
+        isCallingTooltip = false;
+        TooltipController.Instance.HideTooltip();
     }
 
     public void OnEndDrag(PointerEventData eventData)

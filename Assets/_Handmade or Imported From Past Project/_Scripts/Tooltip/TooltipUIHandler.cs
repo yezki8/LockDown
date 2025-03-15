@@ -57,7 +57,7 @@ public class TooltipUIHandler : MonoBehaviour
             ? true : false;
     }
 
-    public void SpawnTooltip(Transform objectToFollow)
+    public void SpawnTooltip()
     {
         //TODO: Animate tooltip here
         _tooltipCanvasGroup.alpha = 1;
@@ -69,10 +69,13 @@ public class TooltipUIHandler : MonoBehaviour
     public void DespawnTooltip()
     {
         //TODO: Animate tooltip here
-        _tooltipCanvasGroup.alpha = 0;
-        _tooltipCanvasGroup.interactable = false;
-        _tooltipCanvasGroup.blocksRaycasts = false;
-        HasSpawned = false;
+        if (HasSpawned == true)
+        {
+            _tooltipCanvasGroup.alpha = 0;
+            _tooltipCanvasGroup.interactable = false;
+            _tooltipCanvasGroup.blocksRaycasts = false;
+            HasSpawned = false;
+        }
     }
 
     public void ShowContent(string header, string content)

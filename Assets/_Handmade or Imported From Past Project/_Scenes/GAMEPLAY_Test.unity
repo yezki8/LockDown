@@ -1343,6 +1343,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 413551385}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &699320588
 GameObject:
@@ -2006,7 +2009,7 @@ MonoBehaviour:
   _targetCamera: {fileID: 519420031}
   DynamicX: 1
   DynamicY: 1
-  HasSpawned: 0
+  HasSpawned: 1
 --- !u!114 &861140934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2351,6 +2354,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 229956133}
+  CallTooltipTimer: 4
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 1
 --- !u!1 &1065610592
 GameObject:
@@ -2864,6 +2870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 2073927080}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &1202139075
 GameObject:
@@ -2956,6 +2965,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 50089291}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &1281062046
 GameObject:
@@ -3123,6 +3135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 622545079}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &1546404178
 GameObject:
@@ -3215,6 +3230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 492150267}
+  CallTooltipTimer: 4
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 2
 --- !u!1 &1547452523
 GameObject:
@@ -3636,6 +3654,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 1281062048}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &1774820335
 GameObject:
@@ -3728,6 +3749,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemStored: {fileID: 0}
   SlotImage: {fileID: 828063393}
+  CallTooltipTimer: 2
+  _callTooltipCountdown: 0
+  isCallingTooltip: 0
   TypeOfSlot: 0
 --- !u!1 &1776625100
 GameObject:

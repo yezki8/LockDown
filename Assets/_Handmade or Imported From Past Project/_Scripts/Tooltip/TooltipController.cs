@@ -39,12 +39,12 @@ public class TooltipController : MonoBehaviour
     #endregion
 
     #region Spawn and Despawn
-    public void ShowTooltip(Transform objectToFollow)
+    public void ShowTooltip()
     {
         _tooltipUIHandler.ShowContent(
             _header,
             _contentParagraph);
-        _tooltipUIHandler.SpawnTooltip(objectToFollow);
+        _tooltipUIHandler.SpawnTooltip();
     }
 
     public void HideTooltip()

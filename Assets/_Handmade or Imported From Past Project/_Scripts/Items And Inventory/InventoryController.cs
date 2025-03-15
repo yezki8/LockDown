@@ -38,7 +38,6 @@ public class InventoryController : MonoBehaviour
         {
             if (BagContent[i].ItemStored == null)
             {
-
                 BagContent[i].StoreItem(collectedItem);
                 Debug.Log($"{targetItem.name} was added to slot {i} of the bag");
                 Destroy(targetItem);
