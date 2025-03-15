@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         LevelManagerObject = GameObject.Find("Level Manager");
-        levelManager = LevelManagerObject.GetComponent<LevelManager>();
+        //levelManager = LevelManagerObject.GetComponent<LevelManager>();
         CheckHealthManaTreshold();
         StartCoroutine(EnumHealthMana());
     }
