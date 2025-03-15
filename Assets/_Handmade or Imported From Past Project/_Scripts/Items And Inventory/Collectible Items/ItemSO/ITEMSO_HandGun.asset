@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeOfItem: 0
   ItemName: Hand Gun
   ItemDescription: A slow but effective ranged firearm
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 21300000, guid: a3301a8414c9eb844a3be613d0476d6a, type: 3}
   ProjectileObject: {fileID: 8127813902266833631, guid: b1be7ed2ed03b0d47af0f47f9d200e5d, type: 3}
   TypeOfHit: 1
   HealthRestore: 0

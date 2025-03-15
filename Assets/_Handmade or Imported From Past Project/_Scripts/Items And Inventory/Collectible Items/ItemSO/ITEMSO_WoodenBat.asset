@@ -15,7 +15,7 @@ MonoBehaviour:
   TypeOfItem: 0
   ItemName: Wooden Bat
   ItemDescription: A simple wooden bat. It ain't special, but it does the job
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 21300000, guid: 5e3da713eae7ece40931e68519b0d8f4, type: 3}
   ProjectileObject: {fileID: 5545810274118006821, guid: 8dd332abebaa71f4f96a3bcf99f0dc86, type: 3}
   TypeOfHit: 0
   HealthRestore: 0
