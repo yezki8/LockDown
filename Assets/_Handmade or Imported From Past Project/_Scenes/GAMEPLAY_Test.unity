@@ -1128,6 +1128,7 @@ GameObject:
   - component: {fileID: 649285972}
   - component: {fileID: 649285974}
   - component: {fileID: 649285973}
+  - component: {fileID: 649285975}
   m_Layer: 5
   m_Name: Bag Slot (1)
   m_TagString: Untagged
@@ -1193,6 +1194,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649285971}
   m_CullTransparentMesh: 1
+--- !u!114 &649285975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649285971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 413551385}
 --- !u!1 &699320588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1303,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2132304844}
+  - {fileID: 941799473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1672,6 +1688,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828063391}
   m_CullTransparentMesh: 1
+--- !u!1 &941799472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941799473}
+  - component: {fileID: 941799478}
+  - component: {fileID: 941799477}
+  - component: {fileID: 941799476}
+  - component: {fileID: 941799475}
+  m_Layer: 5
+  m_Name: Dragable panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &941799473
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941799472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699320592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -257, y: 61}
+  m_SizeDelta: {x: -1790.4124, y: -959.9513}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &941799475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941799472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7380bb8874db800468c415b776abd00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisCanvasGroup: {fileID: 941799476}
+  DraggedItem: {fileID: 0}
+  ItemSource: {fileID: 0}
+  ItemDestination: {fileID: 0}
+--- !u!225 &941799476
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941799472}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!114 &941799477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941799472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &941799478
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941799472}
+  m_CullTransparentMesh: 1
 --- !u!1 &1019159609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1804,7 @@ GameObject:
   - component: {fileID: 1019159610}
   - component: {fileID: 1019159612}
   - component: {fileID: 1019159611}
+  - component: {fileID: 1019159613}
   m_Layer: 5
   m_Name: Pocket Slot
   m_TagString: Untagged
@@ -1748,6 +1870,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019159609}
   m_CullTransparentMesh: 1
+--- !u!114 &1019159613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019159609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 229956133}
 --- !u!1001 &1070864572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1902,6 +2038,7 @@ GameObject:
   - component: {fileID: 1173214021}
   - component: {fileID: 1173214023}
   - component: {fileID: 1173214022}
+  - component: {fileID: 1173214024}
   m_Layer: 5
   m_Name: Bag Slot (4)
   m_TagString: Untagged
@@ -1967,6 +2104,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173214020}
   m_CullTransparentMesh: 1
+--- !u!114 &1173214024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173214020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 2073927080}
 --- !u!1 &1202139075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2129,7 @@ GameObject:
   - component: {fileID: 1202139076}
   - component: {fileID: 1202139078}
   - component: {fileID: 1202139077}
+  - component: {fileID: 1202139079}
   m_Layer: 5
   m_Name: Bag Slot (5)
   m_TagString: Untagged
@@ -2043,6 +2195,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202139075}
   m_CullTransparentMesh: 1
+--- !u!114 &1202139079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202139075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 50089291}
 --- !u!1 &1281062046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2295,7 @@ GameObject:
   - component: {fileID: 1539089123}
   - component: {fileID: 1539089125}
   - component: {fileID: 1539089124}
+  - component: {fileID: 1539089126}
   m_Layer: 5
   m_Name: Bag Slot (3)
   m_TagString: Untagged
@@ -2194,6 +2361,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539089122}
   m_CullTransparentMesh: 1
+--- !u!114 &1539089126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539089122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 622545079}
 --- !u!1 &1546404178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,6 +2386,7 @@ GameObject:
   - component: {fileID: 1546404179}
   - component: {fileID: 1546404181}
   - component: {fileID: 1546404180}
+  - component: {fileID: 1546404182}
   m_Layer: 5
   m_Name: Pocket Slot (1)
   m_TagString: Untagged
@@ -2270,6 +2452,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546404178}
   m_CullTransparentMesh: 1
+--- !u!114 &1546404182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546404178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 492150267}
 --- !u!1 &1642981459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,6 +2613,7 @@ GameObject:
   - component: {fileID: 1728571811}
   - component: {fileID: 1728571813}
   - component: {fileID: 1728571812}
+  - component: {fileID: 1728571814}
   m_Layer: 5
   m_Name: Bag Slot (2)
   m_TagString: Untagged
@@ -2482,6 +2679,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728571810}
   m_CullTransparentMesh: 1
+--- !u!114 &1728571814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728571810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 1281062048}
 --- !u!1 &1774820335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2493,6 +2704,7 @@ GameObject:
   - component: {fileID: 1774820336}
   - component: {fileID: 1774820338}
   - component: {fileID: 1774820337}
+  - component: {fileID: 1774820339}
   m_Layer: 5
   m_Name: Bag Slot
   m_TagString: Untagged
@@ -2558,6 +2770,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774820335}
   m_CullTransparentMesh: 1
+--- !u!114 &1774820339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774820335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad9f6b52d12a8754692ece8b5ddfb82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemStored: {fileID: 0}
+  SlotImage: {fileID: 828063393}
 --- !u!1 &1776625100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,23 +3005,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BagContent:
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 828063393}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 413551385}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 1281062048}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 622545079}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 2073927080}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 50089291}
+  - {fileID: 1774820339}
+  - {fileID: 649285975}
+  - {fileID: 1728571814}
+  - {fileID: 1539089126}
+  - {fileID: 1173214024}
+  - {fileID: 1202139079}
   PocketContent:
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 229956133}
-  - ItemStored: {fileID: 0}
-    SlotImage: {fileID: 492150267}
+  - {fileID: 1019159613}
+  - {fileID: 1546404182}
 --- !u!4 &2102982943
 Transform:
   m_ObjectHideFlags: 0
@@ -2828,7 +3046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2132304844
 RectTransform:
   m_ObjectHideFlags: 0

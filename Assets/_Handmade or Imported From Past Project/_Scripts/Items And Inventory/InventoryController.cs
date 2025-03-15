@@ -1,24 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryController : MonoBehaviour
 {
-    [System.Serializable]
-    public class InventorySlot
-    {
-        public ItemSO ItemStored;
-        public Image SlotImage;
-
-        public void StoreItem(ItemSO item)
-        {
-            ItemStored = item;
-            SlotImage.sprite = ItemStored.ItemSprite;
-        }
-    }
-    public InventorySlot[] BagContent;          //Inside traditional Inventory
-    public InventorySlot[] PocketContent;       //Slots for quick equip
+    public InventorySlotController[] BagContent;          //Inside traditional Inventory
+    public InventorySlotController[] PocketContent;       //Slots for quick equip
 
     public static InventoryController Instance;
 
