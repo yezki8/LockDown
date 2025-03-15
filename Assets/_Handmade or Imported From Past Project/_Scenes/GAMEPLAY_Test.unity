@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 26353999}
   - component: {fileID: 26353998}
   - component: {fileID: 26353997}
+  - component: {fileID: 26354000}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -200,8 +201,8 @@ MonoBehaviour:
   combatState: 0
   canAttack: 0
   cooldown: 0
-  basicMelle: {fileID: 0}
-  basicRange: {fileID: 0}
+  basicMelle: {fileID: 5545810274118006821, guid: 8dd332abebaa71f4f96a3bcf99f0dc86, type: 3}
+  basicRange: {fileID: 8127813902266833631, guid: b1be7ed2ed03b0d47af0f47f9d200e5d, type: 3}
   isIdle: 0
   isRight: 0
   stunned: 0
@@ -231,6 +232,41 @@ MonoBehaviour:
   invincible: 0
   LevelManagerObject: {fileID: 290603972}
   levelManager: {fileID: 290603973}
+--- !u!58 &26354000
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26353995}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &153873325
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +554,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.39, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 153873330}

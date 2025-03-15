@@ -20,7 +20,7 @@ public class HitBoxBehaviour : MonoBehaviour
     [Header("Additional parameter")]
     public bool isHostileToPlayer = false;
     public float knockForce = 2f;
-    public GameObject childHidBox;
+    public GameObject childHitBox;
 
     // Start is called before the first frame update
     void Start()
@@ -108,9 +108,9 @@ public class HitBoxBehaviour : MonoBehaviour
     IEnumerator HitBoxDespawn(float time)
     {         
         yield return new WaitForSeconds(time);
-        if (childHidBox != null)
+        if (childHitBox != null)
         {
-            GameObject child = Instantiate(childHidBox, this.transform.position, this.transform.rotation);
+            GameObject child = Instantiate(childHitBox, this.transform.position, this.transform.rotation);
             child.GetComponent<HitBoxBehaviour>().damage = damage;
             Destroy(this.gameObject);
         }
