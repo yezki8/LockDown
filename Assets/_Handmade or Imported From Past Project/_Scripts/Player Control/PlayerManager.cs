@@ -9,13 +9,13 @@ public class PlayerManager : MonoBehaviour
     public int healthType;
     public float MaxHealth = 6;
     public float HealthPoint = 16;
-    public float[] HealthTreshold;
+    public float[] HealthThreshold;
 
-    public GameObject[] Mana;
-    public int manaType;
-    public float MaxMana = 20;
-    public float ManaPoint = 20;
-    public float[] ManaTreshold;
+    public GameObject[] Ammo;
+    public int ammoType;
+    public float MaxAmmo = 20;
+    public float AmmoPoint = 20;
+    public float[] AmmoTreshold;
 
     public enum AliveState
     {
@@ -50,16 +50,16 @@ public class PlayerManager : MonoBehaviour
 
     public void CheckHealthManaTreshold()
     {
-        int Hpercentage = HealthTreshold.Length;
-        int Mpercentage = ManaTreshold.Length;
+        int Hpercentage = HealthThreshold.Length;
+        int Mpercentage = AmmoTreshold.Length;
 
-        for (int i = 0; i < HealthTreshold.Length; i++)
+        for (int i = 0; i < HealthThreshold.Length; i++)
         {
-            HealthTreshold[i] = (MaxHealth * (HealthTreshold.Length - i)) / (HealthTreshold.Length);
+            HealthThreshold[i] = (MaxHealth * (HealthThreshold.Length - i)) / (HealthThreshold.Length);
         }
-        for (int i = 0; i < ManaTreshold.Length; i++)
+        for (int i = 0; i < AmmoTreshold.Length; i++)
         {
-            ManaTreshold[i] = (MaxMana * (ManaTreshold.Length - i)) / (ManaTreshold.Length);
+            AmmoTreshold[i] = (MaxAmmo * (AmmoTreshold.Length - i)) / (AmmoTreshold.Length);
         }
     }
 
@@ -85,18 +85,18 @@ public class PlayerManager : MonoBehaviour
         //Bar
         if (aliveState == AliveState.alive)
         {
-            for (int i = 0; i < HealthTreshold.Length; i++)
+            for (int i = 0; i < HealthThreshold.Length; i++)
             {
                 if (i == 0)
                 {
-                    if (HealthPoint >= HealthTreshold[i])
+                    if (HealthPoint >= HealthThreshold[i])
                     {
                         healthType = i;
                     }
                 }
-                else if (i < HealthTreshold.Length - 1)
+                else if (i < HealthThreshold.Length - 1)
                 {
-                    if (HealthPoint >= HealthTreshold[i] && HealthPoint < HealthTreshold[i - 1])
+                    if (HealthPoint >= HealthThreshold[i] && HealthPoint < HealthThreshold[i - 1])
                     {
                         healthType = i;
                     }
@@ -105,7 +105,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            healthType = HealthTreshold.Length - 1;
+            healthType = HealthThreshold.Length - 1;
         }
         for (int i = 0; i < Health.Length; i++)
         {
@@ -121,49 +121,49 @@ public class PlayerManager : MonoBehaviour
 
         //Mana Attribute ==========================================================================
         //Error handling treshold
-        if (ManaPoint < 0)
+        if (AmmoPoint < 0)
         {
-            ManaPoint = 0;
+            AmmoPoint = 0;
         }
-        else if (ManaPoint > MaxMana)
+        else if (AmmoPoint > MaxAmmo)
         {
-            ManaPoint = MaxMana;
+            AmmoPoint = MaxAmmo;
         }
         //Bar
-        if (ManaPoint > 0)
+        if (AmmoPoint > 0)
         {
-            for (int i = 0; i < ManaTreshold.Length; i++)
+            for (int i = 0; i < AmmoTreshold.Length; i++)
             {
                 if (i == 0)
                 {
-                    if (ManaPoint >= ManaTreshold[i])
+                    if (AmmoPoint >= AmmoTreshold[i])
                     {
-                        manaType = i;
+                        ammoType = i;
                     }
                 }
-                else if (i < ManaTreshold.Length - 1)
+                else if (i < AmmoTreshold.Length - 1)
                 {
-                    if (ManaPoint >= ManaTreshold[i] && ManaPoint < ManaTreshold[i - 1])
+                    if (AmmoPoint >= AmmoTreshold[i] && AmmoPoint < AmmoTreshold[i - 1])
                     {
-                        manaType = i;
+                        ammoType = i;
                     }
                 }
             }
         }
         else
         {
-            manaType = ManaTreshold.Length - 1;
+            ammoType = AmmoTreshold.Length - 1;
         }
 
-        for (int i = 0; i < Mana.Length; i++)
+        for (int i = 0; i < Ammo.Length; i++)
         {
-            if (i == manaType)
+            if (i == ammoType)
             {
-                Mana[i].SetActive(true);
+                Ammo[i].SetActive(true);
             }
             else
             {
-                Mana[i].SetActive(false);
+                Ammo[i].SetActive(false);
             }
         }
     }

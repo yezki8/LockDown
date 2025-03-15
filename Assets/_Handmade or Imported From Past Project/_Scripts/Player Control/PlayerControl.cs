@@ -137,7 +137,7 @@ public class PlayerControl : MonoBehaviour
             }
             else
             {
-                if (canAttack && playerManager.ManaPoint > 0)
+                if (canAttack && playerManager.AmmoPoint > 0)
                 {
                     attacking = true;
                 }
@@ -208,7 +208,7 @@ public class PlayerControl : MonoBehaviour
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
         attackCd = cooldown;
-        playerManager.ManaPoint -= 2;
+        playerManager.AmmoPoint -= 2;
     }
 
     //Collider========================================================================================================

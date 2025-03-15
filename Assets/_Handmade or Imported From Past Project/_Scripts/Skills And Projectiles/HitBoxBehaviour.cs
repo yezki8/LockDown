@@ -93,7 +93,7 @@ public class HitBoxBehaviour : MonoBehaviour
                     else
                     {
                         collision.gameObject.GetComponent<NPCController>().GotKnocked(ownerObject, knockForce);
-                        ownerObject.GetComponent<PlayerManager>().ManaPoint += 1;
+                        ownerObject.GetComponent<PlayerManager>().AmmoPoint += 1;
                     }
                 }
             }
