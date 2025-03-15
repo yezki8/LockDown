@@ -74,13 +74,13 @@ public class PlayerAnimationController : MonoBehaviour
                     {
                         if (playerControl.combatState == PlayerControl.CombatState.normal)
                         {
-                            if (playerControl.canAttack == false)   //ini dangerous bts, harus diubah ke depan
+                            if (playerControl.ReadyToAttack == false)   //ini dangerous bts, harus diubah ke depan
                             {
                                 anim.Play("melle f");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle f");
                                 }
@@ -92,13 +92,13 @@ public class PlayerAnimationController : MonoBehaviour
                         }
                         else
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("range f");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle f");
                                 }
@@ -127,14 +127,14 @@ public class PlayerAnimationController : MonoBehaviour
                     {
                         if (playerControl.combatState == PlayerControl.CombatState.normal)
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("melle w");
                             }
                             else
                             {
 
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle w");
                                 }
@@ -146,19 +146,19 @@ public class PlayerAnimationController : MonoBehaviour
                         }
                         else
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("range w");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle w");
                                 }
                                 else
                                 {
-                                    if (playerControl.isRight)
+                                    if (playerControl.IsRight)
                                     {
                                         anim.Play("run 2 bw");
                                     }
@@ -187,13 +187,13 @@ public class PlayerAnimationController : MonoBehaviour
                     {
                         if (playerControl.combatState == PlayerControl.CombatState.normal)
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("melle e");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle e");
                                 }
@@ -205,20 +205,20 @@ public class PlayerAnimationController : MonoBehaviour
                         }
                         else
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("range e");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle e");
                                 }
                                 else
                                 {
                                     //anim.Play("run 2 fe");
-                                    if (playerControl.isRight)
+                                    if (playerControl.IsRight)
                                     {
                                         anim.Play("run 2 fe");
                                     }
@@ -248,13 +248,13 @@ public class PlayerAnimationController : MonoBehaviour
                     {
                         if (playerControl.combatState == PlayerControl.CombatState.normal)
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("melle s");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle s");
                                 }
@@ -266,13 +266,13 @@ public class PlayerAnimationController : MonoBehaviour
                         }
                         else
                         {
-                            if (playerControl.canAttack == false)
+                            if (playerControl.ReadyToAttack == false)
                             {
                                 anim.Play("range s");
                             }
                             else
                             {
-                                if (playerControl.isIdle)
+                                if (playerControl.IsIdle)
                                 {
                                     anim.Play("idle s");
                                 }

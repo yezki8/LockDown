@@ -27,15 +27,16 @@ public class PlayerControl : MonoBehaviour
         aiming
     };
     public CombatState combatState;
-    bool attackStatus;
-    public bool canAttack = false;
+
+    public bool AllowedToAttack = true;
+    public bool ReadyToAttack = false;
     bool attacking = false;
-    public float cooldown = 0;
-    float attackCd;
+    public float AttackCooldown = 0;
+    float attackCcountdowm;
     public InventorySlotController EquippedMelle;
     public InventorySlotController EquippedRange;
-    public bool isIdle;
-    public bool isRight;
+    public bool IsIdle;
+    public bool IsRight;
 
     public bool stunned = false;
 
@@ -80,20 +81,20 @@ public class PlayerControl : MonoBehaviour
 
         if (HorizontalMove == 0 && VerticalMove == 0)
         {
-            isIdle = true;
+            IsIdle = true;
         }
         else
         {
-            isIdle = false;
+            IsIdle = false;
         }
 
         if (HorizontalMove >= 0)
         {
-            isRight = true;
+            IsRight = true;
         }
         else
         {
-            isRight = false;
+            IsRight = false;
         }
 
         movementDirection = new Vector2(HorizontalMove, VerticalMove);
@@ -113,33 +114,35 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Attack
-        if (attackCd > 0)
+        if (attackCcountdowm > 0)
         {
-            attackCd -= 1 * Time.deltaTime;
+            attackCcountdowm -= 1 * Time.deltaTime;
         }
-        if (attackCd <= 0)
+        if (attackCcountdowm <= 0)
         {
-            canAttack = true;
+            ReadyToAttack = true;
         }
         else
         {
-            canAttack = false;
+            ReadyToAttack = false;
         }
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Attack");
-            if (combatState == CombatState.normal)
+            if (AllowedToAttack)
             {
-                if (canAttack)
+                if (combatState == CombatState.normal)
                 {
-                    attacking = true;
+                    if (ReadyToAttack)
+                    {
+                        attacking = true;
+                    }
                 }
-            }
-            else
-            {
-                if (canAttack && playerManager.AmmoPoint > 0)
+                else
                 {
-                    attacking = true;
+                    if (ReadyToAttack && playerManager.AmmoPoint > 0)
+                    {
+                        attacking = true;
+                    }
                 }
             }
         }
@@ -206,8 +209,8 @@ public class PlayerControl : MonoBehaviour
         GameObject BasicAttack = Instantiate(hitboxPrefab, Indicator.transform);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
-        BasicAttack.GetComponent<HitBoxBehaviour>().despawn = cooldown - 0.1f;
-        attackCd = cooldown;
+        BasicAttack.GetComponent<HitBoxBehaviour>().despawn = AttackCooldown - 0.1f;
+        attackCcountdowm = AttackCooldown;
     }
 
     void BasicRangeAttack()
@@ -217,9 +220,14 @@ public class PlayerControl : MonoBehaviour
         GameObject BasicAttack = Instantiate(projectilePrefab, Indicator.transform.position, Indicator.transform.rotation);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
-        attackCd = cooldown;
+        attackCcountdowm = AttackCooldown;
         
         //EquippedRange.Amount -= 1;
+    }
+
+    public void LockUnlockAttack()
+    {
+        AllowedToAttack = !AllowedToAttack;
     }
 
     //Collider========================================================================================================
