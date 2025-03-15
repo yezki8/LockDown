@@ -164,8 +164,6 @@ public class PlayerControl : MonoBehaviour
     void Combat()
     {
         //Look At Camera
-        
-
         if (combatState == CombatState.normal)
         {
             MainCamera.GetComponent<ChaseController>().objectToFollow = PlayerBody;
