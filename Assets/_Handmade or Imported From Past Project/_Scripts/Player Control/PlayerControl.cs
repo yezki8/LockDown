@@ -32,8 +32,8 @@ public class PlayerControl : MonoBehaviour
     bool attacking = false;
     public float cooldown = 0;
     float attackCd;
-    public GameObject basicMelle;
-    public GameObject basicRange;
+    public ItemSO EquippedMelle;
+    public ItemSO EquippedRange;
     public bool isIdle;
     public bool isRight;
 
@@ -173,7 +173,10 @@ public class PlayerControl : MonoBehaviour
             PlayerBody.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             if (attacking)
             {
-                BasicMelleAttack();
+                if (EquippedMelle != null)
+                {
+                    BasicMelleAttack();
+                }
                 attacking = false;
             }
         }
@@ -187,7 +190,10 @@ public class PlayerControl : MonoBehaviour
             PlayerBody.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             if (attacking)
             {
-                BasicRangeAttack();
+                if (EquippedRange != null)
+                {
+                    BasicRangeAttack();
+                }
                 attacking = false;
             }
         }
@@ -195,7 +201,8 @@ public class PlayerControl : MonoBehaviour
 
     void BasicMelleAttack()
     {
-        GameObject BasicAttack = Instantiate(basicMelle, Indicator.transform);
+        GameObject hitboxPrefab = EquippedMelle.ProjectileObject;
+        GameObject BasicAttack = Instantiate(hitboxPrefab, Indicator.transform);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
         BasicAttack.GetComponent<HitBoxBehaviour>().despawn = cooldown - 0.1f;
@@ -204,11 +211,13 @@ public class PlayerControl : MonoBehaviour
 
     void BasicRangeAttack()
     {
-        GameObject BasicAttack = Instantiate(basicRange, Indicator.transform.position, Indicator.transform.rotation);
+        GameObject projectilePrefab = EquippedRange.ProjectileObject;
+        GameObject BasicAttack = Instantiate(projectilePrefab, Indicator.transform.position, Indicator.transform.rotation);
         BasicAttack.GetComponent<HitBoxBehaviour>().owner = this.tag;
         BasicAttack.GetComponent<HitBoxBehaviour>().ownerObject = this.gameObject;
         attackCd = cooldown;
-        playerManager.AmmoPoint -= 2;
+        
+        //EquippedRange.Amount -= 1;
     }
 
     //Collider========================================================================================================
@@ -246,6 +255,10 @@ public class PlayerControl : MonoBehaviour
         if (collision.tag == "Key")
         {
             Destroy(collision.gameObject);
+        }
+        if (collision.tag == "CollectibleItem")
+        {
+            InventoryController.Instance.AddItem(collision.gameObject);
         }
     }
 

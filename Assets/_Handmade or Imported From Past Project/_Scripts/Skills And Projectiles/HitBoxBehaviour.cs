@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HitType
+{
+    melle,
+    range
+}
 public class HitBoxBehaviour : MonoBehaviour
 {
     [Header("Main parameter")]
@@ -10,17 +15,12 @@ public class HitBoxBehaviour : MonoBehaviour
     public float despawn;
     public string owner;
     public GameObject ownerObject;
-    public enum HitType
-    {
-        melle,
-        range
-    }
     public HitType hitType;
 
     [Header("Additional parameter")]
     public bool isHostileToPlayer = false;
     public float knockForce = 2f;
-    public GameObject childHitBox;
+    public GameObject childHidBox;
 
     // Start is called before the first frame update
     void Start()
@@ -108,9 +108,9 @@ public class HitBoxBehaviour : MonoBehaviour
     IEnumerator HitBoxDespawn(float time)
     {         
         yield return new WaitForSeconds(time);
-        if (childHitBox != null)
+        if (childHidBox != null)
         {
-            GameObject child = Instantiate(childHitBox, this.transform.position, this.transform.rotation);
+            GameObject child = Instantiate(childHidBox, this.transform.position, this.transform.rotation);
             child.GetComponent<HitBoxBehaviour>().damage = damage;
             Destroy(this.gameObject);
         }
