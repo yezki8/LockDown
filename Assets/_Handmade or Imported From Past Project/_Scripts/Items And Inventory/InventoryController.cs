@@ -10,6 +10,12 @@ public class InventoryController : MonoBehaviour
     {
         public ItemSO ItemStored;
         public Image SlotImage;
+
+        public void StoreItem(ItemSO item)
+        {
+            ItemStored = item;
+            SlotImage.sprite = ItemStored.ItemSprite;
+        }
     }
     public InventorySlot[] BagContent;          //Inside traditional Inventory
     public InventorySlot[] PocketContent;       //Slots for quick equip
@@ -45,7 +51,8 @@ public class InventoryController : MonoBehaviour
         {
             if (BagContent[i].ItemStored == null)
             {
-                BagContent[i].ItemStored = collectedItem;
+
+                BagContent[i].StoreItem(collectedItem);
                 Debug.Log($"{targetItem.name} was added to slot {i} of the bag");
                 Destroy(targetItem);
                 break;
